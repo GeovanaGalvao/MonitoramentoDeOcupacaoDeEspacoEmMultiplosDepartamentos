@@ -1,6 +1,6 @@
 import cv2
 
-capturaDeImagem = cv2.VideoCapture("VideosTeste/CaminhadaNaPraia.mp4")
+capturaDeImagem = cv2.VideoCapture("/home/pi/Desktop/VideosTeste/CaminhadaNaPraia.mp4")
 detectorDeObjetos = cv2.createBackgroundSubtractorMOG2()
 # Transforma a imagem para obter o resultado desejado.
 
@@ -13,7 +13,7 @@ while True:
     #erá utilizado, por isso o nome _ .
     
     for cnt in contorno:
-        if cv2.contourArea(cnt) > 1000: #Ignora movimento de pequenos objetos
+        if cv2.contourArea(cnt) > 2000: #Ignora movimento de pequenos objetos
             cv2.drawContours(frame, [cnt], -1, (0, 200, 0), 2) #Desenha o contorno em volta dos
             #objetos em movimento. Os valores dentro do parenteses são paramentros do contorno.
     
